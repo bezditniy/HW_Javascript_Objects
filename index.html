@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        alert("Заполните форму!!!");
+        
+        // созданы вопросы модульного окна
+        const   heading = prompt("Ваше имя: ");
+        const   body = prompt("Ваша фамилия: ");
+        const   footer = prompt("Ваше отчество: ");
+        const   data = prompt("Ваш возраст: ");
+
+        // создан обьект "Документ"
+        const   doc = {
+                    appHeading: "",
+                    appBody: "",
+                    appFooter: "",
+                    appData: "",
+            
+                    // вложенный обьект "Приложение"
+                    application: {
+                        appHeading: {
+
+                        },
+                        appBody: {
+
+                        },
+                        appFooter: {
+
+                        },
+                        appData: {
+
+                        },
+                    },
+                
+                // метод отображение документа
+                show: function () {
+                    document.write("<p>Ваше имя: " + this.appHeading + ";");
+                    document.write("<p>Ваша фамилия: " + this.appBody + ";");
+                    document.write("<p>Ваше отчество: " + this.appFooter + ";");
+                    document.write("<p>Ваш возраст: " + this.appData + ";");
+                },
+
+                // метод заполнение документа
+                filing: function (heading, body, footer, data){
+                    doc.appHeading = heading;
+                    doc.appBody = body;
+                    doc.appFooter = footer;
+                    doc.appData = data;
+                }
+            };
+
+            doc.filing(heading, body, footer, data);
+            doc.show();
+            document.write("<hr>");
+
+    </script>
+
+</body>
+</html>
